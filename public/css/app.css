@@ -43910,6 +43910,10 @@ a.text-dark:focus {
   }
 }
 
+body {
+  min-height: 100vh;
+}
+
 .font1 {
   font-family: "Amatic SC", cursive !important;
 }
@@ -44030,12 +44034,6 @@ h6 {
   }
 }
 
-@media screen and (min-width: 1264px) {
-  .theLogo {
-    width: 20%;
-  }
-}
-
 header a:hover {
   text-decoration: none;
 }
@@ -44109,12 +44107,6 @@ footer {
 @media screen and (min-width: 960px) {
   .shiftImage .theImage {
     width: 15%;
-  }
-}
-
-@media screen and (min-width: 1264px) {
-  .shiftImage .theImage {
-    width: 7.5%;
   }
 }
 
