@@ -52258,7 +52258,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52269,6 +52269,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -52302,7 +52303,15 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("p", { staticClass: "noReserved  white--text lighten-5" }, [
-        _vm._v(_vm._s(_vm.$t("footer.rights")))
+        _vm._v(_vm._s(_vm.$t("footer.rights")) + " | "),
+        _c(
+          "a",
+          {
+            staticClass: "lime--text darken-2 my-0 py-0",
+            attrs: { href: "/login" }
+          },
+          [_vm._v("login")]
+        )
       ])
     ]
   )
