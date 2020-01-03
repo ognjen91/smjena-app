@@ -1,0 +1,18 @@
+.pickerChoice.active{
+  text-decoration: underline;
+}
+
+.selectComponent{
+  text-align: center;
+
+  &.selectStartingDay{
+    @media screen and (min-width: 600px){
+      text-align: right;
+    }
+  }
+  &.selectFreeDays{
+    @media screen and (min-width: 600px){
+      text-align: left;
+    }
+  }
+}

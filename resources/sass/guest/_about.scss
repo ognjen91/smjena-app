@@ -1,0 +1,14 @@
+.about{
+  padding: 40% 0%;
+  // height: 100%;
+  // min-height: 65vh;
+
+  @media screen and (min-width: $small){
+    // min-height: 60
+    padding: 25% 0%;
+  }
+  @media screen and (min-width: $medium){
+    // min-height: 60
+    padding: 8% 0 12% 0;
+  }
+}

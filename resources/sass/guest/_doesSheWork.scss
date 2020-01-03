@@ -1,0 +1,29 @@
+.doesSheWorkValue{
+  text-align: center;
+  @media screen and (min-width: $small){
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2.5%;
+  }
+}
+
+.guestPicker{
+  display: flex;
+  justify-content: center;
+  @media screen and (min-width: $small){
+    justify-content: flex-end;
+    padding-right: 2.5%;
+  }
+}
+
+
+.shiftValueSubtitle{
+  font-size: 2.5rem;
+}
+
+.shiftValueTitle{
+  font-size: 3.5rem;
+
+}

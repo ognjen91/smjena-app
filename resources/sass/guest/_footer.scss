@@ -1,0 +1,20 @@
+footer{
+  // position: absolute;
+  // bottom: 0;
+  // height: 20vh;
+  // max-height: 20vh;
+  // min-height: 20vh;
+  width: 100%;
+  padding: 5% 3%;
+
+@media screen and (min-width: $small){
+  // min-height: 60
+  padding: 3% 2%;
+}
+@media screen and (min-width: $medium){
+  // min-height: 60
+  padding: 1% 1%;
+  // padding-bottom: 5%;
+}
+
+}

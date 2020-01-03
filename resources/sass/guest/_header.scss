@@ -1,0 +1,62 @@
+.logoHolder{
+  display: flex;
+  justify-content: flex-start;
+  padding: 1% 2%;
+  @media screen and (min-width: $small){
+
+    justify-content: center;
+  }
+  @media screen and (min-width: $medium){
+    padding: 0% 3%;
+  border: 1px solid yellow !important;
+  }
+}
+.logo{
+  display: flex;
+  justify-content: center;
+}
+
+.theLogo{
+  width: 60%;
+  @media screen and (min-width: $small){
+    width: 90%;
+  }
+  @media screen and (min-width: $medium){
+    width: 50%;
+  }
+  @media screen and (min-width: $large){
+    width: 20%;
+  }
+}
+
+header a{
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+header .router-link-exact-active{
+  font-weight: 800;
+}
+
+
+#selectLocale{
+  position: absolute;
+  top: 0;
+  right: 1%;
+  width: 40%;
+
+  @media screen and (min-width: $small){
+    width: 25%;
+  }
+  @media screen and (min-width: $medium){
+    width: 20%;
+  }
+  @media screen and (min-width: $large){
+    width: 17%;
+  }
+
+  & *{
+    color: #fff;
+  }
+}

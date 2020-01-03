@@ -1,0 +1,58 @@
+$small : 600px;
+$medium : 960px;
+$large : 1264px;
+$extraLarge : 1904px;
+$font1: 'Amatic SC', cursive;
+$font2: 'Julius Sans One', sans-serif;
+
+.font1{
+  font-family: $font1 !important;
+}
+
+.font2{
+  font-family: $font2 !important;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $font1;
+}
+
+
+
+
+.guestApp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+
+  & *{
+    font-family: $font2;
+  }
+  & h1,& h2,& h3,& h4,& h5,& h6{
+    font-family: $font1;
+  }
+
+
+
+}
+
+.theAppContainer{
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.mainContent{
+  padding-bottom: 20%;
+
+  @media screen and (min-width: $small){
+    padding-bottom: 12%;
+  }
+  @media screen and (min-width: $medium){
+    padding-bottom: 1.5%;
+  }
+  @media screen and (min-width: $large){
+    padding-bottom: 1%;
+  }
+}

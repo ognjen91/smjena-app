@@ -1,0 +1,33 @@
+{
+  "hello" : "Hello World",
+  "header" : {
+    "home" : "Home",
+    "checkByDate" : "Provjera po datumu",
+    "about" : "O projektu",
+    "localeTitle" : "Jezik"
+  },
+  "shifts" : {
+    "prva" : "prva",
+    "druga" : "druga",
+    "Slobodan dan" : "Slobodan dan"
+  },
+  "home" : {
+    "currentShiftTitle" : "Trenutna smjena"
+  },
+  "doesSheWork" : {
+    "question" : "Koja je smjena"
+  },
+  "about" : {
+    "text1" : "Opet smo joj promašili smjenu",
+    "text2" : "Nema smisla više... Hitno apliakcija da se napravi...",
+    "text3" : "i bi apliakcija"
+  },
+  "footer" : {
+    "rights" : "Sva prava zadržana"
+  },
+  "pageNotFound" : {
+    "title" : "Toga nema",
+    "subtitle" : "Vratite se na početnu stranu klikom",
+    "here" : "ovdje"
+  }
+}
