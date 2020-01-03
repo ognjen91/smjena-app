@@ -55934,7 +55934,7 @@ var render = function() {
     { staticClass: "row about deep-purple darken-2" },
     [
       _c("v-col", { staticClass: "d-flex justify-center flex-column" }, [
-        _c("h3", { staticClass: "text-center white--text darken-2" }, [
+        _c("h2", { staticClass: "text-center white--text darken-2" }, [
           _vm._v(_vm._s(_vm.$t("about.text1")))
         ]),
         _vm._v(" "),
