@@ -94674,7 +94674,7 @@ module.exports = {"hello":"Hello World","header":{"home":"Home","checkByDate":"P
 /* 101 */
 /***/ (function(module, exports) {
 
-module.exports = {"hello":"Hello World","header":{"home":"Home","checkByDate":"Check By Date","about":"About","localeTitle":"Language"},"shifts":{"prva":"First shift","druga":"Second shift","Slobodan dan":"No Work On This Day"},"home":{"currentShiftTitle":"Current Shift"},"doesSheWork":{"question":"Which Shift Is She"},"about":{"text1":"We've missed her shift again","text2":"The App must be made as soon ass possible","text3":"and there was an app"},"footer":{"rights":"All Rights Reserved"},"pageNotFound":{"title":"Page does not exist","subtitle":"Go Back to homepage by clicking","here":"here"}}
+module.exports = {"hello":"Hello World","header":{"home":"Home","checkByDate":"Check By Date","about":"About","localeTitle":"Language"},"shifts":{"prva":"First shift","druga":"Second shift","Slobodan dan":"No Work On This Day"},"home":{"currentShiftTitle":"Current Shift"},"doesSheWork":{"question":"Which Shift Is She"},"about":{"text1":"We've missed her shift again","text2":"The App must be made as soon as possible","text3":"and there was an app"},"footer":{"rights":"All Rights Reserved"},"pageNotFound":{"title":"Page does not exist","subtitle":"Go Back to homepage by clicking","here":"here"}}
 
 /***/ }),
 /* 102 */
