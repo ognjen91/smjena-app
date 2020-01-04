@@ -55422,7 +55422,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['currentShift'],
   data: function data() {
@@ -55533,10 +55532,9 @@ var render = function() {
                 attrs: {
                   src:
                     _vm.theActiveShift == "prva"
-                      ? "/assets/sleepyOwl.png"
+                      ? "/assets/highSeal.png"
                       : "/assets/afternoon.png",
-                  "lazy-src": "/assets/logo.png",
-                  "aspect-ratio": "1"
+                  "lazy-src": "/assets/logo.png"
                 }
               })
             ],
@@ -94676,7 +94674,7 @@ module.exports = {"hello":"Hello World","header":{"home":"Home","checkByDate":"P
 /* 101 */
 /***/ (function(module, exports) {
 
-module.exports = {"hello":"Hello World","header":{"home":"Home","checkByDate":"Check By Date","about":"About","localeTitle":"Language"},"shifts":{"prva":"First shift","druga":"Second shift","Slobodan dan":"No Work On This Day"},"home":{"currentShiftTitle":"Current Shift"},"doesSheWork":{"question":"Which Shift Is She"},"about":{"text1":"We've missed her shift again","text2":"The App must be made as soon ass possible","text3":"and there was an app"},"footer":{"rights":"All Rights Reseved"},"pageNotFound":{"title":"Page does not exist","subtitle":"Go Back to homepage by clicking","here":"here"}}
+module.exports = {"hello":"Hello World","header":{"home":"Home","checkByDate":"Check By Date","about":"About","localeTitle":"Language"},"shifts":{"prva":"First shift","druga":"Second shift","Slobodan dan":"No Work On This Day"},"home":{"currentShiftTitle":"Current Shift"},"doesSheWork":{"question":"Which Shift Is She"},"about":{"text1":"We've missed her shift again","text2":"The App must be made as soon ass possible","text3":"and there was an app"},"footer":{"rights":"All Rights Reserved"},"pageNotFound":{"title":"Page does not exist","subtitle":"Go Back to homepage by clicking","here":"here"}}
 
 /***/ }),
 /* 102 */

@@ -19,9 +19,8 @@
       <v-row class="">
         <v-col cols="12" class="shiftImage">
           <v-img
-          :src="theActiveShift == 'prva'? '/assets/sleepyOwl.png' : '/assets/afternoon.png'"
+          :src="theActiveShift == 'prva'? '/assets/highSeal.png' : '/assets/afternoon.png'"
           lazy-src="/assets/logo.png"
-          aspect-ratio="1"
           class="theImage"
           >
         </v-img>
