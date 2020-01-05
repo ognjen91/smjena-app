@@ -77,4 +77,6 @@
         </main>
     </v-app>
 </body>
+
+<footer class="py-2 text-center text-success">Orjen Web &copy; 2020</footer>
 </html>

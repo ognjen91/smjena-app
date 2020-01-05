@@ -15,6 +15,7 @@
         <admin-date-pickers
         :starting-date="{{$startingDate}}"
         :free-days="{{json_encode($freeDays)}}"
+        :flipped-shift-days="{{json_encode($flippedShiftDays)}}"
         ></admin-date-pickers>
       </div>
     </div>

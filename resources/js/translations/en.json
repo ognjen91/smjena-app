@@ -20,8 +20,9 @@
   },
   "about" : {
     "text1" : "We've missed her shift again",
-    "text2" : "The App must be made as soon as possible",
-    "text3" : "and there was an app"
+    "text2" : "Well it seems I'll make her an app",
+    "text3" : "I expected an app as a New Year surprise",
+    "thereWasText" : "and there was an app"
   },
   "footer" : {
     "rights" : "All Rights Reserved"

@@ -20,8 +20,9 @@
   },
   "about" : {
     "text1" : "Opet smo joj promašili smjenu",
-    "text2" : "Nema smisla više... Hitno apliakcija da se napravi...",
-    "text3" : "i bi apliakcija"
+    "text2" : "Izleda da ću stvarno da joj napravim aplikaciju",
+    "text3" : "Očekivala sam aplikaciju za Novu godinu, da me iznenadiš",
+    "thereWasText" : "i bi apliakcija"
   },
   "footer" : {
     "rights" : "Sva prava zadržana"

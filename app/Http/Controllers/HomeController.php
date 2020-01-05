@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\FreeDay;
+use App\FlippedShiftDay;
 use App\StartingDay;
 
 class HomeController extends Controller
@@ -30,7 +31,8 @@ class HomeController extends Controller
     public function index()
     {
         $freeDays = FreeDay::select('date')->get()->pluck('date');
+        $flippedShiftDays = FlippedShiftDay::select('date')->get()->pluck('date');
         $startingDate = StartingDay::firstOrCreate([]);
-        return view('home', compact('freeDays', 'startingDate'));
+        return view('home', compact('freeDays','flippedShiftDays','startingDate'));
     }
 }

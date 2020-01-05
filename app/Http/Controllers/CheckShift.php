@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\FreeDay;
 use App\StartingDay;
+use App\FlippedShiftDay;
 use Carbon\Carbon;
 
 class CheckShift extends Controller
@@ -21,10 +22,14 @@ class CheckShift extends Controller
       $theStartingDay = StartingDay::firstOrCreate([]);
       $startingDate = $theStartingDay->date;
       $startingShift = $theStartingDay->shift;
-      $differentShift = $startingShift == 'prva'? 'druga' : 'prva';
+      $shifts = ['prva', 'druga'];
+      $indexOfStartingShift = array_search($startingShift, $shifts);
+      $differentShift = $shifts[!$indexOfStartingShift];
+
       $durationOfShiftInDays = $theStartingDay->durationOfShiftInDays;
       $freeDaysBetween = FreeDay::whereBetween('date', [$startingDate, $dateToCheck])->get();
-      // dd($freeDaysBetween->pluck('date')->toArray());
+      $dateHasFlippedShift = FlippedShiftDay::where('date', $dateToCheck)->first();
+
 
       // check if the date is free day
       if($freeDaysBetween->where('date', $dateToCheck)->first()){
@@ -46,12 +51,12 @@ class CheckShift extends Controller
       $firstDayInTheWeekOfTheDateToCheck = (clone $dateToCheck)->startOfWeek();
       $firstDayInTheWeekOfTheStartingDay = (clone $startingDate)->startOfWeek();
 
-
+        //days in  a week where shift is the same as at the end of prev week
         $templateArrayOfFirstDaysInWeek = [];
         for($i=0; $i<floor($durationOfShiftInDays/2); $i++){
           $templateArrayOfFirstDaysInWeek[] = (clone $firstDayInTheWeekOfTheDateToCheck)->addDays($i)->format('Y-m-d');
         }
-        // dd($templateArrayOfFirstDaysInWeek);
+
         //ako je razlika u sedmicama djeljiva sa 2, isti je sablon smjenskih dana u sedmici
         //if the difference in weeks is dividable with 2, it's the same template of shift days in a week
         if($firstDayInTheWeekOfTheStartingDay->diffInWeeks($firstDayInTheWeekOfTheDateToCheck)%2 == 0){
@@ -62,6 +67,12 @@ class CheckShift extends Controller
         //ako je razlicit sablon smjena, suprotno
         //& vice versa for different tempalte of shifts
           $currentShift = in_array($dateToCheck->format('Y-m-d'), $templateArrayOfFirstDaysInWeek)? $startingShift : $differentShift;
+      }
+
+      //finally, check if the date has flipped shift
+      if($dateHasFlippedShift){
+        $indexOfCurrentShift = array_search($currentShift, $shifts);
+        $currentShift = $shifts[!$indexOfCurrentShift];
       }
 
       // dd($x, $currentShift);

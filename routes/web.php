@@ -21,6 +21,7 @@ Route::group(['namespace'=>'Update', 'prefix'=>'update'], function(){
   Route::post('startingDate', 'StartingDate')->name('update.startingDate');
   Route::post('durationOfShiftInDays', 'DurationOfShift')->name('update.durationOfShiftInDays');
   Route::post('freeDays', 'FreeDays')->name('update.freeDays');
+  Route::post('flippedShiftDays', 'FlippedShiftDays')->name('update.flippedShiftDays');
 });
 
 Route::post('checkShift', 'CheckShift');
