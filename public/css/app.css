@@ -43974,13 +43974,35 @@ h6 {
 
 @media screen and (min-width: 960px) {
   .mainContent {
-    padding-bottom: 1.5%;
+    padding-bottom: 2.5%;
   }
 }
 
 @media screen and (min-width: 1264px) {
   .mainContent {
-    padding-bottom: 1%;
+    padding-bottom: 2%;
+  }
+}
+
+.mainContent.freeDay {
+  padding-bottom: 32%;
+}
+
+@media screen and (min-width: 600px) {
+  .mainContent.freeDay {
+    padding-bottom: 14%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .mainContent.freeDay {
+    padding-bottom: 3.5%;
+  }
+}
+
+@media screen and (min-width: 1264px) {
+  .mainContent.freeDay {
+    padding-bottom: 2.5%;
   }
 }
 
@@ -44088,6 +44110,22 @@ footer {
   }
 }
 
+.freeDayQuestion {
+  margin-bottom: 15%;
+}
+
+@media screen and (min-width: 600px) {
+  .freeDayQuestion {
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .freeDayQuestion {
+    margin-bottom: 0%;
+  }
+}
+
 .shiftImage {
   text-align: center;
 }
@@ -44110,8 +44148,40 @@ footer {
   }
 }
 
+.shiftImage .theImage.freeDayImg {
+  width: 70%;
+}
+
+@media screen and (min-width: 600px) {
+  .shiftImage .theImage.freeDayImg {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .shiftImage .theImage.freeDayImg {
+    width: 23%;
+  }
+}
+
 .currnetShiftValue {
   font-size: 6rem;
+}
+
+.currnetShiftValue.onFreeDay {
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .currnetShiftValue.onFreeDay {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .currnetShiftValue.onFreeDay {
+    font-size: 5.4rem;
+  }
 }
 
 .doesSheWorkValue {

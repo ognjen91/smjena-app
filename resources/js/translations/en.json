@@ -9,7 +9,8 @@
   "shifts" : {
     "prva" : "First shift",
     "druga" : "Second shift",
-    "Slobodan dan" : "No Work On This Day"
+    "Slobodan dan" : "No Work On This Day",
+    "Slobodan dan danas" : "No Work Today"
   },
   "home" : {
     "currentShiftTitle" : "Current Shift"

@@ -12,11 +12,13 @@
 </template>
 
 <script>
+  import moment from 'moment'
   export default {
     data () {
       return {
-        picker: new Date().toISOString().substr(0, 10),
+        // picker: new Date().toISOString().substr(0, 10),
         today: new Date().toISOString().substr(0, 10),
+        picker : moment(new Date()).format("YYYY-MM-DD")
       }
     },
     methods: {
@@ -26,6 +28,9 @@
       picker(newVal){
         this.$emit('dateSelected', newVal)
       }
+    },
+    mounted(){
+      console.log(this.picker);
     }
   }
 </script>

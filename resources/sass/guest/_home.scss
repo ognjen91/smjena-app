@@ -7,6 +7,20 @@
   // padding-bottom: 5%;
 }
 
+.freeDayQuestion{
+  margin-bottom: 15%;
+  @media screen and (min-width: $small){
+    margin-bottom: 5%;
+    // border: 1px solid red !important;
+  }
+  @media screen and (min-width: $medium){
+    margin-bottom: 0%;
+  }
+  @media screen and (min-width: $large){
+    // width: 7.5%;
+  }
+}
+
 .shiftImage{
   text-align: center;
 }
@@ -26,9 +40,31 @@
   @media screen and (min-width: $large){
     // width: 7.5%;
   }
+
+  &.freeDayImg{
+    width: 70%;
+    @media screen and (min-width: $small){
+      width: 40%;
+      // border: 1px solid red !important;
+    }
+    @media screen and (min-width: $medium){
+      width: 23%;
+    }
+  }
 }
 
 
 .currnetShiftValue{
   font-size: 6rem;
+  &.onFreeDay{
+
+    font-size: 2.5rem;
+    @media screen and (min-width: $small){
+      font-size: 4rem;
+    }
+    @media screen and (min-width: $medium){
+      font-size: 5.4rem;
+    }
+
+  }
 }

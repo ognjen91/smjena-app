@@ -31,6 +31,7 @@
   </template>
 
   <script>
+    import moment from 'moment'
     import SelectStartingShift from './includes/SelectStartingShift'
     import DurationOfShift from './includes/DurationOfShift'
     export default {
@@ -41,7 +42,8 @@
       props : ['startingDate'],
       data () {
         return {
-          picker: new Date().toISOString().substr(0, 10),
+          // picker: new Date().toISOString().substr(0, 10),
+          picker : moment(new Date()).format("YYYY-MM-DD"),
           success : false,
           error : false
         }

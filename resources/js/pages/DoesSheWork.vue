@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   props : ['currentShift'],
 
@@ -29,7 +31,7 @@ export default {
       shiftValue : '',
       dateToCheck : null,
       datesChecked : {},
-      today: new Date().toISOString().substr(0, 10),
+      today:  moment(new Date()).format("YYYY-MM-DD"),
     }
   },
   methods : {

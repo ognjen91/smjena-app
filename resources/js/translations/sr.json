@@ -9,10 +9,11 @@
   "shifts" : {
     "prva" : "prva",
     "druga" : "druga",
-    "Slobodan dan" : "Slobodan dan"
+    "Slobodan dan" : "Slobodan dan",
+    "Slobodan dan danas" : "Slobodan dan"
   },
   "home" : {
-    "currentShiftTitle" : "Trenutna smjena"
+    "currentShiftTitle" : "Današnja smjena"
   },
   "doesSheWork" : {
     "question" : "Koja je smjena"

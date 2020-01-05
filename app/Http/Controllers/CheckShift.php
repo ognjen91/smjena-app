@@ -14,13 +14,22 @@ class CheckShift extends Controller
   public function __invoke(Request $request){
     try{
 
+      /*
+      CHECK IF SUNDAY
+       */
+      // if(self::checkIfDateIsSunday(new \DateTime())){
+      //   return \Response::json([
+      //       'value' => 'Slobodan dan'
+      //   ], 201); // Status code here
+      // }
+
       $dateToCheck = $request->date;
       $theStartingDay = StartingDay::firstOrCreate([]);
       $startingDay = $theStartingDay->date;
       $durationOfShiftInDays = $theStartingDay->durationOfShiftInDays;
       $freeDaysBetween = FreeDay::whereBetween('date', [$startingDay, $dateToCheck])->get();
       // dd($freeDaysBetween->pluck('date')->toArray());
-      //
+
       // check if the date is free day
       if($freeDaysBetween->where('date', $dateToCheck)->first()){
         return \Response::json([
@@ -28,11 +37,12 @@ class CheckShift extends Controller
         ], 201); // Status code here
       }
 
+      $dateToCheck = Carbon::parse($dateToCheck);
+
       $numberOfFreeDaysInThePeriod = $freeDaysBetween->count();
       $numberOfSundaysInThePeriod = self::calculateNumberOfSundaysBeweenTwoDates($startingDay, $dateToCheck);
 
       $startingDay = Carbon::parse($startingDay);
-      $dateToCheck = Carbon::parse($dateToCheck);
 
 
       $totalDaysInThePeriod = $dateToCheck->diffInDays($startingDay)+1;
@@ -77,6 +87,15 @@ class CheckShift extends Controller
       $sundays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
 
       return $sundays;
+  }
+
+  private static function checkIfDateIsSunday(\DateTime $date){
+    $carbon = Carbon::instance($date);
+    $carbon->setTimezone('Europe/berlin');
+    // dd($carbon->setTimezone('Europe/berlin'));
+
+    if($carbon->dayOfWeek == 0) return true;
+    return false;
   }
 
 }

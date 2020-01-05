@@ -30,6 +30,7 @@
     props : ['freeDays'],
     data () {
       return {
+          counter : 0,
           dates : [],
           success : false,
           error : false,
@@ -38,7 +39,10 @@
 
 
     methods: {
-      allowedDates: val => ![0, 7].includes(new Date(val).getDay())
+      allowedDates: val => ![0, 7].includes(new Date(val).getDay()),
+      datePicked(date){
+        console.log(date);
+      }
     },
 
 
@@ -48,6 +52,8 @@
 
     watch : {
       dates(newVal, oldVal){
+        this.counter++
+        if(this.counter == 1) return
         let difference;
         let dateToAdd = newVal.find(theDate => !oldVal.includes(theDate));
         let dateToChangeStatus = dateToAdd

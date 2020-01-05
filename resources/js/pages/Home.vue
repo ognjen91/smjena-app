@@ -1,8 +1,8 @@
 <template lang="html">
-  <main class='row homepage purple accent-4'>
+  <main class='row homepage purple accent-4' :class="{'freeDay' : theActiveShift == 'Slobodan dan'}">
     <v-col cols="12">
       <h3
-       class="w-100 text-center yellow--text darken-1 font1"
+       class="w-100 text-center yellow--text darken-1 font1 whichShiftQuestion" :class="{'freeDayQuestion' : theActiveShift == 'Slobodan dan'}"
        >{{$t('home.currentShiftTitle')}}</h3>
        <transition enter-active-class="animated bounceIn"
                  leave-active-class="lightSpeedOut"
@@ -11,7 +11,10 @@
                   <h1
                   v-if="theActiveShift"
                   class="currnetShiftValue text-center font2"
-                  :class="{'light-green--text lighten-3' : theActiveShift == 'prva', 'amber--text darken-1' : theActiveShift == 'druga'}"
+                  :class="{
+                    'amber--text lighten-1' : theActiveShift == 'prva',
+                     'amber--text darken-1' : theActiveShift == 'druga',
+                     'onFreeDay light-green--text lighten-3' : theActiveShift == 'Slobodan dan' || theActiveShift == 'Slobodan dan danas'}"
                   >
                   {{$t(`shifts.${this.theActiveShift}`)}}
                 </h1>
@@ -19,9 +22,10 @@
       <v-row class="">
         <v-col cols="12" class="shiftImage">
           <v-img
-          :src="theActiveShift == 'prva'? '/assets/highSeal.png' : '/assets/afternoon.png'"
+          :src="theActiveShift == 'prva'? '/assets/highSeal.png' : theActiveShift == 'druga'? '/assets/afternoon.png' : '/assets/resting.png'"
           lazy-src="/assets/logo.png"
           class="theImage"
+          :class="{'freeDayImg' : theActiveShift == 'Slobodan dan'}"
           >
         </v-img>
         </v-col>
@@ -32,44 +36,46 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   props : ['currentShift'],
   data(){
     return{
       theActiveShift : "",
-      today: new Date().toISOString().substr(0, 10),
+      // today: new Date().toISOString().substr(0, 10),
+      picker : moment(new Date()).format("YYYY-MM-DD")
+
     }
   },
   methods : {
     checkShift(date){
       this.theActiveShift = ""
 
-      if(this.checkIfTheDateIsSunday(date)){
-        this.theActiveShift = 'Slobodan dan'
-        return
-      }
+      let today =  moment(new Date()).format("YYYY-MM-DD")
+
+      /*
+      CHECK IF SUNDAY
+       */
+      // if(this.checkIfTheDateIsSunday(today)){
+      //   this.theActiveShift = 'Slobodan dan danas'
+      //   return
+      // }
 
 
       // this.shiftValue = "druga"
       axios.post('/checkShift', {date : date})
         .then(({data})=> {
-          // console.log(this.shiftValue);
-          // console.log(data.value);
-               // return otpSent(response)
-               // this.success = true
                this.theActiveShift = data.value
-               // this.datesChecked[date] = data.value
         })
         .catch( (error)=> {
               console.log(error);
-              // this.error = true
-              // setTimeout(()=>{this.error = false}, 3000)
          });
     },
 
     checkIfTheDateIsSunday(date){
       var myDate = new Date(date)
-      return myDate.getDay() == 0;eturn
+      return myDate.getDay() == 0;
     }
   },
 

@@ -10,6 +10,7 @@ window.Vue = require('vue');
 import colors from 'vuetify/lib/util/colors'
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 import MainApp from './MainApp.vue'
+Vue.use(require('vue-moment'));
 
 // ===VueRouter===
 import VueRouter from 'vue-router';

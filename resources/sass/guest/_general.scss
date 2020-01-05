@@ -54,9 +54,22 @@ h1,h2,h3,h4,h5,h6{
     padding-bottom: 12%;
   }
   @media screen and (min-width: $medium){
-    padding-bottom: 1.5%;
+    padding-bottom: 2.5%;
   }
   @media screen and (min-width: $large){
-    padding-bottom: 1%;
+    padding-bottom: 2%;
+  }
+  &.freeDay{
+    // padding-bottom: 10%;
+    padding-bottom: 32%;
+    @media screen and (min-width: $small){
+      padding-bottom: 14%;
+    }
+    @media screen and (min-width: $medium){
+      padding-bottom: 3.5%;
+    }
+    @media screen and (min-width: $large){
+    padding-bottom: 2.5%;
+  }
   }
 }
