@@ -57,10 +57,10 @@ export default {
       /*
       CHECK IF SUNDAY
        */
-      // if(this.checkIfTheDateIsSunday(today)){
-      //   this.theActiveShift = 'Slobodan dan danas'
-      //   return
-      // }
+      if(this.checkIfTheDateIsSunday(today)){
+        this.theActiveShift = 'Slobodan dan danas'
+        return
+      }
 
 
       // this.shiftValue = "druga"

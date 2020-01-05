@@ -55448,11 +55448,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       /*
       CHECK IF SUNDAY
        */
-      // if(this.checkIfTheDateIsSunday(today)){
-      //   this.theActiveShift = 'Slobodan dan danas'
-      //   return
-      // }
-      // this.shiftValue = "druga"
+
+      if (this.checkIfTheDateIsSunday(today)) {
+        this.theActiveShift = 'Slobodan dan danas';
+        return;
+      } // this.shiftValue = "druga"
+
 
       axios.post('/checkShift', {
         date: date

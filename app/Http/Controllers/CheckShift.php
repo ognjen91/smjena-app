@@ -17,11 +17,11 @@ class CheckShift extends Controller
       /*
       CHECK IF SUNDAY
        */
-      // if(self::checkIfDateIsSunday(new \DateTime())){
-      //   return \Response::json([
-      //       'value' => 'Slobodan dan'
-      //   ], 201); // Status code here
-      // }
+      if(self::checkIfDateIsSunday(new \DateTime())){
+        return \Response::json([
+            'value' => 'Slobodan dan'
+        ], 201); // Status code here
+      }
 
       $dateToCheck = $request->date;
       $theStartingDay = StartingDay::firstOrCreate([]);
