@@ -1,8 +1,8 @@
 <template lang="html">
-  <main class='row homepage purple accent-4' :class="{'freeDay' : theActiveShift == 'Slobodan dan'}">
+  <main class='row homepage purple accent-4' :class="{'freeDay' : theActiveShift == 'Slobodan dan danas'}">
     <v-col cols="12">
       <h3
-       class="w-100 text-center yellow--text darken-1 font1 whichShiftQuestion" :class="{'freeDayQuestion' : theActiveShift == 'Slobodan dan'}"
+       class="w-100 text-center yellow--text darken-1 font1 whichShiftQuestion" :class="{'freeDayQuestion' : theActiveShift == 'Slobodan dan danas'}"
        >{{$t('home.currentShiftTitle')}}</h3>
        <transition enter-active-class="animated bounceIn"
                  leave-active-class="lightSpeedOut"
@@ -14,7 +14,7 @@
                   :class="{
                     'amber--text lighten-1' : theActiveShift == 'prva',
                      'amber--text darken-1' : theActiveShift == 'druga',
-                     'onFreeDay light-green--text lighten-3' : theActiveShift == 'Slobodan dan' || theActiveShift == 'Slobodan dan danas'}"
+                     'onFreeDay light-green--text lighten-3' : theActiveShift == 'Slobodan dan danas'}"
                   >
                   {{$t(`shifts.${this.theActiveShift}`)}}
                 </h1>
@@ -25,7 +25,7 @@
           :src="theActiveShift == 'prva'? '/assets/highSeal.png' : theActiveShift == 'druga'? '/assets/afternoon.png' : '/assets/resting.png'"
           lazy-src="/assets/logo.png"
           class="theImage"
-          :class="{'freeDayImg' : theActiveShift == 'Slobodan dan'}"
+          :class="{'freeDayImg' : theActiveShift == 'Slobodan dan danas'}"
           >
         </v-img>
         </v-col>

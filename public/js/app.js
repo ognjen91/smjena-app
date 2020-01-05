@@ -55486,7 +55486,7 @@ var render = function() {
     "main",
     {
       staticClass: "row homepage purple accent-4",
-      class: { freeDay: _vm.theActiveShift == "Slobodan dan" }
+      class: { freeDay: _vm.theActiveShift == "Slobodan dan danas" }
     },
     [
       _c(
@@ -55498,7 +55498,9 @@ var render = function() {
             {
               staticClass:
                 "w-100 text-center yellow--text darken-1 font1 whichShiftQuestion",
-              class: { freeDayQuestion: _vm.theActiveShift == "Slobodan dan" }
+              class: {
+                freeDayQuestion: _vm.theActiveShift == "Slobodan dan danas"
+              }
             },
             [_vm._v(_vm._s(_vm.$t("home.currentShiftTitle")))]
           ),
@@ -55523,7 +55525,6 @@ var render = function() {
                         "amber--text lighten-1": _vm.theActiveShift == "prva",
                         "amber--text darken-1": _vm.theActiveShift == "druga",
                         "onFreeDay light-green--text lighten-3":
-                          _vm.theActiveShift == "Slobodan dan" ||
                           _vm.theActiveShift == "Slobodan dan danas"
                       }
                     },
@@ -55545,7 +55546,9 @@ var render = function() {
             [
               _c("v-img", {
                 staticClass: "theImage",
-                class: { freeDayImg: _vm.theActiveShift == "Slobodan dan" },
+                class: {
+                  freeDayImg: _vm.theActiveShift == "Slobodan dan danas"
+                },
                 attrs: {
                   src:
                     _vm.theActiveShift == "prva"
