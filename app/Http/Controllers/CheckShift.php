@@ -19,9 +19,11 @@ class CheckShift extends Controller
 
       $dateToCheck = $request->date;
       $theStartingDay = StartingDay::firstOrCreate([]);
-      $startingDay = $theStartingDay->date;
+      $startingDate = $theStartingDay->date;
+      $startingShift = $theStartingDay->shift;
+      $differentShift = $startingShift == 'prva'? 'druga' : 'prva';
       $durationOfShiftInDays = $theStartingDay->durationOfShiftInDays;
-      $freeDaysBetween = FreeDay::whereBetween('date', [$startingDay, $dateToCheck])->get();
+      $freeDaysBetween = FreeDay::whereBetween('date', [$startingDate, $dateToCheck])->get();
       // dd($freeDaysBetween->pluck('date')->toArray());
 
       // check if the date is free day
@@ -31,38 +33,37 @@ class CheckShift extends Controller
         ], 201); // Status code here
       }
 
-      $dateToCheck = Carbon::parse($dateToCheck);
       /*
       CHECK IF SUNDAY (2/2... Home.vue = 1/2)
        */
+       $dateToCheck = Carbon::parse($dateToCheck);
+       $startingDate = Carbon::parse($startingDate);
       if($dateToCheck->dayOfWeek == 0){
         return \Response::json([
             'value' => 'Slobodan dan'
         ], 201); // Status code here
       }
-
-      $numberOfFreeDaysInThePeriod = $freeDaysBetween->count();
-      $numberOfSundaysInThePeriod = self::calculateNumberOfSundaysBeweenTwoDates($startingDay, $dateToCheck);
-
-      $startingDay = Carbon::parse($startingDay);
+      $firstDayInTheWeekOfTheDateToCheck = (clone $dateToCheck)->startOfWeek();
+      $firstDayInTheWeekOfTheStartingDay = (clone $startingDate)->startOfWeek();
 
 
-      $totalDaysInThePeriod = $dateToCheck->diffInDays($startingDay)+1;
-
-      $totalWorkinDaysInThePeriod = $totalDaysInThePeriod - $numberOfSundaysInThePeriod - $numberOfFreeDaysInThePeriod;
-
-      $x = $totalWorkinDaysInThePeriod%($durationOfShiftInDays*2);
-
-      $startingShift = $theStartingDay->shift;
-      $differentShift = $startingShift == 'prva'? 'druga' : 'prva';
-
-      $modulusOfTheSameShift = [];
-      for ($i=1; $i <=$durationOfShiftInDays; $i++) {
-        $modulusOfTheSameShift[] = $i;
+        $templateArrayOfFirstDaysInWeek = [];
+        for($i=0; $i<floor($durationOfShiftInDays/2); $i++){
+          $templateArrayOfFirstDaysInWeek[] = (clone $firstDayInTheWeekOfTheDateToCheck)->addDays($i)->format('Y-m-d');
+        }
+        // dd($templateArrayOfFirstDaysInWeek);
+        //ako je razlika u sedmicama djeljiva sa 2, isti je sablon smjenskih dana u sedmici
+        //if the difference in weeks is dividable with 2, it's the same template of shift days in a week
+        if($firstDayInTheWeekOfTheStartingDay->diffInWeeks($firstDayInTheWeekOfTheDateToCheck)%2 == 0){
+          //ako je isti sablon smjena, prvih n/2 dana daju suprotnu smjenu
+          //if it is the same template of shifts, first n/2 days are in different shit
+          $currentShift = in_array($dateToCheck->format('Y-m-d'), $templateArrayOfFirstDaysInWeek)? $differentShift : $startingShift;
+      }else{
+        //ako je razlicit sablon smjena, suprotno
+        //& vice versa for different tempalte of shifts
+          $currentShift = in_array($dateToCheck->format('Y-m-d'), $templateArrayOfFirstDaysInWeek)? $startingShift : $differentShift;
       }
-      // dd($modulusOfTheSameShift);
-      // $currentShift = in_array($x, [1,2,3])? $startingShift : $differentShift;
-      $currentShift = in_array($x, $modulusOfTheSameShift)? $startingShift : $differentShift;
+
       // dd($x, $currentShift);
       return \Response::json([
           'value' => $currentShift

@@ -5,7 +5,6 @@
      color="purple darken-4"
       :allowed-dates="allowedDates"
       :first-day-of-week="1"
-      :min="today"
       :locale="currentLocale == 'sr'? 'sr-Latn-CS' : 'en-US'"
      ></v-date-picker>
   </v-row>

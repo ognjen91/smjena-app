@@ -43968,7 +43968,7 @@ h6 {
 
 @media screen and (min-width: 600px) {
   .mainContent {
-    padding-bottom: 12%;
+    padding-bottom: 19%;
   }
 }
 
@@ -43990,7 +43990,7 @@ h6 {
 
 @media screen and (min-width: 600px) {
   .mainContent.freeDay {
-    padding-bottom: 14%;
+    padding-bottom: 19%;
   }
 }
 
@@ -44042,6 +44042,7 @@ h6 {
 
 .theLogo {
   width: 60%;
+  height: 100%;
 }
 
 @media screen and (min-width: 600px) {

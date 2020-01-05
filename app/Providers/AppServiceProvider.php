@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\StartingDay;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Carbon::setWeekStartsAt(Carbon::MONDAY);
+        // Carbon::setWeekEndsAt(Carbon::SUNDAY);
     }
 }

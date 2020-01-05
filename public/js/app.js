@@ -96956,7 +96956,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['freeDays', 'startingDate'],
   data: function data() {
     return {
-      activeComponent: 'StartingDay' // activeComponent : 'FreeDays'
+      activeComponent: 'FreeDays' // activeComponent : 'FreeDays'
 
     };
   }
@@ -98082,7 +98082,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -98124,7 +98123,6 @@ var render = function() {
           color: "purple darken-4",
           "allowed-dates": _vm.allowedDates,
           "first-day-of-week": 1,
-          min: _vm.today,
           locale: _vm.currentLocale == "sr" ? "sr-Latn-CS" : "en-US"
         },
         model: {

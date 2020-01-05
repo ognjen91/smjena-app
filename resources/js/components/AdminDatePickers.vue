@@ -50,7 +50,7 @@ export default {
 
   data(){
     return {
-      activeComponent : 'StartingDay'
+      activeComponent : 'FreeDays'
       // activeComponent : 'FreeDays'
     }
   }
