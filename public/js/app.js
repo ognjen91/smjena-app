@@ -55446,7 +55446,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.theActiveShift = "";
       var today = __WEBPACK_IMPORTED_MODULE_0_moment___default()(new Date()).format("YYYY-MM-DD");
       /*
-      CHECK IF SUNDAY
+      CHECK IF SUNDAY (1/2...CheckShit.php = 2/2)
        */
 
       if (this.checkIfTheDateIsSunday(today)) {

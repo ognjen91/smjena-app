@@ -14,14 +14,8 @@ class CheckShift extends Controller
   public function __invoke(Request $request){
     try{
 
-      /*
-      CHECK IF SUNDAY
-       */
-      if(self::checkIfDateIsSunday(new \DateTime())){
-        return \Response::json([
-            'value' => 'Slobodan dan'
-        ], 201); // Status code here
-      }
+
+
 
       $dateToCheck = $request->date;
       $theStartingDay = StartingDay::firstOrCreate([]);
@@ -38,6 +32,14 @@ class CheckShift extends Controller
       }
 
       $dateToCheck = Carbon::parse($dateToCheck);
+      /*
+      CHECK IF SUNDAY (2/2... Home.vue = 1/2)
+       */
+      if($dateToCheck->dayOfWeek == 0){
+        return \Response::json([
+            'value' => 'Slobodan dan'
+        ], 201); // Status code here
+      }
 
       $numberOfFreeDaysInThePeriod = $freeDaysBetween->count();
       $numberOfSundaysInThePeriod = self::calculateNumberOfSundaysBeweenTwoDates($startingDay, $dateToCheck);

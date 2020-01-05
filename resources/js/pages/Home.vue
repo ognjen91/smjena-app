@@ -55,7 +55,7 @@ export default {
       let today =  moment(new Date()).format("YYYY-MM-DD")
 
       /*
-      CHECK IF SUNDAY
+      CHECK IF SUNDAY (1/2...CheckShit.php = 2/2)
        */
       if(this.checkIfTheDateIsSunday(today)){
         this.theActiveShift = 'Slobodan dan danas'
